@@ -1,3 +1,22 @@
 
 
-General Notes about setting up tt-rss
+General Notes about setting up tt-rss in AWS
+* Launch the VPC
+* Launch and configure Ubuntu E2C/VPC (Security groups and elastic IPs)
+* Verify you can SSH into into it 
+    * ssh -i /path/my-key-pair.pem ubuntu@ipAddress
+* Create a new user for running ttrss 
+* Install PHP and it's modules
+    * sudo apt-get install php
+        * php7
+* Install the needed modules
+    * sudo apt-get install php-json
+    * sudo apt-get install php-xml
+    * sudo apt-get install php-mbstring
+    * sudo apt-get install php-fileinfo
+    * sudo apt-get install php-curl
+    * sudo apt-get install php-gd
+    * sudo apt-get install php-pgsql
+* Install PostgreSQL
+    * sudo apt-get install postgresql postgresql-contrib
+* 
