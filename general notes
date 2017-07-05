@@ -19,4 +19,22 @@ General Notes about setting up tt-rss in AWS
     * sudo apt-get install php-pgsql
 * Install PostgreSQL
     * sudo apt-get install postgresql postgresql-contrib
+* Installing PostgreSQL automattically created a Ubuntu user named postgres
+    * Disable password loging for this user
+    * Set up the user for SSH
+    * Use this user for managing the PostgreSQL DB 
+    * https://wiki.postgresql.org/wiki/First_steps 
+    * Create a new user and database for use by the ttrss application(one with minimal permissions)
+* Install tt-rss under ttrss user
 * 
+    
+
+
+
+
+TODO
+* Disable password SSH login for all users
+* How to login from GUI locally using ssh
+* Evidently schema does not mean database in PostgreSQL, figure out this difference
+* Create a new non superuser admin user with password validation
+* Turn this into pretty .md
