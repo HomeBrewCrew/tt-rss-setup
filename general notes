@@ -5,18 +5,12 @@ General Notes about setting up tt-rss in AWS
 * Launch and configure Ubuntu E2C/VPC (Security groups and elastic IPs)
 * Verify you can SSH into into it 
     * ssh -i /path/my-key-pair.pem ubuntu@ipAddress
-* Create a new user for running ttrss 
+* Create a new admin user for setting up and running ttrss 
 * Install PHP and it's modules
     * sudo apt-get install php
-        * php7
+        * At the time of this writting it was PHP 7
 * Install the needed modules
-    * sudo apt-get install php-json
-    * sudo apt-get install php-xml
-    * sudo apt-get install php-mbstring
-    * sudo apt-get install php-fileinfo
-    * sudo apt-get install php-curl
-    * sudo apt-get install php-gd
-    * sudo apt-get install php-pgsql
+    * sudo apt-get install php-json php-xml php-mbstring php-fileinfo php-curl php-gd php-pgsql
 * Install PostgreSQL
     * sudo apt-get install postgresql postgresql-contrib
 * Installing PostgreSQL automattically created a Ubuntu user named postgres
@@ -24,17 +18,19 @@ General Notes about setting up tt-rss in AWS
     * Set up the user for SSH
     * Use this user for managing the PostgreSQL DB 
     * https://wiki.postgresql.org/wiki/First_steps 
-    * Create a new user and database for use by the ttrss application(one with minimal permissions)
-* Install tt-rss under ttrss user
-* 
-    
+    * Create a new user and database for use by the ttrss application(one with minimal permissions and only on the necessary resources)
+* Instal and configure Nginx 
+    * If you are running into issues there is a command to test your Nginx configs
+        * sudo nginx -t
 
-
-
+Using 
+* https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-in-ubuntu-16-04
+* https://www.digitalocean.com/community/tutorials/how-to-install-ttrss-with-nginx-for-debian-7-on-a-vps
+* https://gist.github.com/yeokm1/04f1430cb8a81d86b1ef 
+* https://tt-rss.org/fox/tt-rss/wikis/InstallationNotes 
 
 TODO
-* Disable password SSH login for all users
+* Disable password SSH login for ALL users(I think I got them all but see if you can do it at a system level rather than for each user)
 * How to login from GUI locally using ssh
-* Evidently schema does not mean database in PostgreSQL, figure out this difference
-* Create a new non superuser admin user with password validation
+* Evidently schema does not mean database in PostgreSQL, figure out this difference and general PostgreSQL stuff
 * Turn this into pretty .md
